@@ -1,39 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>REAL GAMBLER GURUJI</title>
 <style>
-    body, html {
-        margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden;
-        background: url('background.jpeg') no-repeat center center/cover;
-        font-family: Arial, sans-serif; color: white; text-align: center;
-        position: relative;
-    }
-    .overlay {
-        background: rgba(0, 0, 0, 0.6); position: absolute; top:0; left:0; width:100%; height:100%;
-        display: flex; flex-direction: column; align-items: center; justify-content: center;
-        padding: 20px;
-    }
-    h1 { font-size: 2em; margin: 10px; }
-    p { font-size: 1.2em; margin: 5px; }
-    a.button {
-        background: #0088cc; padding: 15px 30px; color: white; text-decoration: none; font-size: 1.2em;
-        border-radius: 5px; margin: 20px; display: inline-block;
-    }
-    .countdown { font-size: 3em; font-weight: bold; margin-top: 10px; }
+  body {
+    margin: 0;
+    padding: 0;
+    background: url('background.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    font-size: 2rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  }
+  .timer {
+    font-size: 4rem;
+    margin: 1rem 0;
+  }
+  a {
+    display: inline-block;
+    background: #0088cc;
+    padding: 1rem 2rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    animation: zoom-in-out 1.5s infinite ease-in-out;
+  }
+  @keyframes zoom-in-out {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
 </style>
 </head>
 <body>
-<div class="overlay">
-    <h1>🔥 CRICKET KI DUNIYA KA BADSHAH 🔥</h1>
-    <p>❗ IPL 2018 - 58/60 PASS ❗</p>
-    <p>👉 35/38 TNPL KE MATCH PASS ✅</p>
-    <p>👉 100/100 MATCHED PASSED 🏏</p>
-    <a href="https://t.me/+_0PVaZ7NJ2JjNmQ1" class="button">JOIN TELEGRAM FREE 📢</a>
-    <div class="countdown">23</div>
-    <p>Seconds Left</p>
-</div>
+  <h1>🔥CRICKET KI DUNIA KA BADSHAH🔥</h1>
+  <div class="timer" id="countdown">23</div>
+  <a href="https://t.me/+_0PVaZ7NJ2JjNmQ1" target="_blank">JOIN TELEGRAM FREE</a>
+<script>
+  let seconds = 23;
+  const countdownEl = document.getElementById('countdown');
+  const interval = setInterval(() => {
+    seconds--;
+    if (seconds <= 0) { seconds = 0; clearInterval(interval); }
+    countdownEl.textContent = seconds;
+  }, 1000);
+</script>
 </body>
 </html>
